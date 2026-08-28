@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="">
+        <!-- select -->
+
+        <label for="">Skills</label>
+        <select name="skills" id="">
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="js">js</option>
+        </select>
+        <br><br>
+        skills: <select name="skills" id="" size="1" multiple>
+            <optgroup label="frontend">
+                <option value="html">html</option>
+                <option value="css">css</option>
+                <option value="js">js</option>
+            </optgroup>
+            <optgroup label="backend">
+                <option value="java">java</option>
+                <option value="python">python</option>
+                <option value="Node js">Node js</option>
+            </optgroup>
+            <optgroup label="Database">
+                <option value="Sql">Sql</option>
+                <option value="MySql">MySql</option>
+                <option value="MongoDb">MongoDb</option>
+            </optgroup>
+        </select><br><br>
+
+
+        Skills: <input list="skills">
+        <datalist id="skills">
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="js">js</option>
+        </datalist>
+
+       <br><br> <button type="submit">Submit</button>
+     </form>
+</body>
+</html>
