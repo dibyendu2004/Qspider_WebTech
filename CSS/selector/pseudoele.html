@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::first-letter{
+            color: red;
+        }
+
+        p::first-line{
+            color: greenyellow;
+        }
+
+         p::selection{
+            color: aqua;
+            background-color: black;
+        }
+
+        p::before{
+            content: "Welcome==>";
+            /* content: url(../../image/super\ meteor.jpeg); */
+        }
+
+        p::after{
+            /* content: "==>Thank You"; */
+            /* content: url(../../image/super\ meteor.jpeg); */
+        }  
+
+        ul>li::marker{
+            color: red;
+        }
+
+        input::placeholder{
+            color:blueviolet
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur quos minima quisquam pariatur labore eius necessitatibus maxime reprehenderit. Accusamus sint consequatur nostrum nam, porro praesentium veniam laudantium sed labore tenetur consequuntur, dolorum at delectus vitae rerum sapiente tempore consectetur nihil nisi. Totam pariatur corporis magnam ad rem debitis porro exercitationem vitae sint similique reprehenderit ducimus optio consectetur molestiae atque quod impedit, neque assumenda voluptatum libero nemo nulla ullam facere quo? Voluptas perferendis iste, incidunt libero omnis debitis commodi accusamus repellendus! Labore, quo minima repudiandae obcaecati reprehenderit maiores assumenda similique officiis fugiat neque tenetur, accusamus ut recusandae laboriosam amet sunt nostrum.</p>
+
+
+    <ul>
+        <li>Tiger</li>
+        <li>Lion</li>
+        <li>Dog</li>
+        <li>Cow</li>
+    </ul>
+
+    <form action="">
+        <input type="text" name="" id="" placeholder="Enter Your Name">
+    </form>
+</body>
+</html>
