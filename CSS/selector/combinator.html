@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* descendent selector */
+        div h1{
+            color: aqua;
+        }
+        div h2{
+            color: aquamarine;
+        }
+
+        /* child selector */
+        div>h1{
+            color: white;
+            background-color: black;
+        }
+
+        article>h2{
+            color: black;
+            background-color: aqua;
+        }
+
+        /* adjacent sibling selector */
+        div+p{
+            color: brown;
+        }
+    
+        /* general sibling selector */
+        div~p{
+            /* color:black; */
+            background-color: rgb(35, 152, 123);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>direct children h1</h1>
+        <h2>direct children h2</h2>
+        <article>
+            <h1>indirect children of div h1</h1>
+            <h2>indirect children of div h2</h2>
+        </article>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+    <h3>Lorem ipsum dolor sit amet.</h3>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <h4>Lorem ipsum dolor sit amet.</h4>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <h5>Lorem ipsum dolor sit amet.</h5>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+</body>
+</html>
