@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>FORM</legend>
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" id="firstname" pattern="[A-Za-z]"><br><br>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" id="lastname" pattern="[A-Za-z]"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" pattern="[0-9a-zA-Z]{8,}"><br><br>
+
+            <label for="tel">M No:</label>
+            <input type="tel" name="tel" id="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+
+            <label for="gender" >Gender:</label>
+            <input type="radio" name="gender" id="" value="Male">Male
+            <input type="radio" name="gender" id="" value="Female">Female
+            <input type="radio" name="gender" id="" value="Others">Others <br><br>
+
+            <label for="address">Address:</label>
+            <textarea name="adress" id="address" rows="5" cols="20"></textarea><br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" required><br><br>
+
+            <label for="DOB">DOB:</label>
+            <input type="dob" name="dob" id="DOB" required><br><br>
+
+            <label for="month">Month:</label>
+            <input type="month" name="month" id="month"><br><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+
+
+        </fieldset>
+    </form>
+</body>
+</html>
