@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display and visibility</title>
+    <style>
+        .cont{
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+        }
+        #a{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+        #b{
+            height: 100px;
+            width: 100px;
+            background-color: violet;
+            display: none;
+        }
+        #c{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+        #d{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+        #e{
+            height: 100px;
+            width: 100px;
+            background-color: violet;
+            visibility: hidden;
+        }
+        #f{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div id="a"></div>
+        <div id="b"></div>
+        <div id="c"></div>
+    </div>
+    <div class="cont">
+        <div id="d"></div>
+        <div id="e"></div>
+        <div id="f"></div>
+    </div>
+</body>
+</html>
