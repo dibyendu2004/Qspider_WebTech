@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+        #container nav{
+            width: 100%;
+            height: 75px;
+            background-color: rgb(98, 7, 183);
+        }
+        #container nav ul{
+            display: flex;
+            justify-content: space-around;
+            height: inherit;
+            align-items: center;
+            list-style: none;
+            
+        }
+        #container nav ul li{
+            font-size: 30px;
+            color: whitesmoke;
+            font-weight: bolder;
+            font-family: Arial, Helvetica, sans-serif;
+            
+
+        }
+        #container nav ul #active{
+            display: none;
+        }
+
+        #container nav ul #home:hover #active{
+            display: block;
+            position: absolute;
+        }
+
+        #container nav ul #home #active ul{
+            display: block;
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 200px;
+            background-color: rgb(161, 127, 193);
+            margin-left: 50px;
+
+        }
+        #container nav ul #home #active ul li{
+            color: rgb(98, 7, 183);
+        }
+
+        
+
+        #container nav ul #home #active ul:hover{
+            cursor: pointer;
+        }
+
+        #container nav ul #home #active ul li:hover{
+            color: wheat;
+            background-color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <section id="container">
+        <nav>
+            <ul>
+                <li id="home">HOME
+                    <div id="active">
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JS</li>
+                            <li>REACT</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>ABOUT</li>
+                <li>CONTACTS</li>
+                <li>HELP</li>
+            </ul>
+        </nav>
+    </section>
+</body>
+</html>
