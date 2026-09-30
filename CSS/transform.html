@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            height: 200px;
+            width: 200px;
+            background-color: blueviolet;
+            color: white;
+            font-size: 90px;
+            text-align: center;
+            line-height: 200px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #main:hover{
+            /* transform: translateX(-300px); */
+            /* transform: translateY(-200px); */
+            /* transform: translate(300px,200px); */
+
+            /* transform: scaleX(2); */
+            /* transform: scaleY(2); */
+            /* transform: scale(2,2); */
+
+            /* transform: rotate(45deg); */
+            /* transform: rotateY(125deg); */
+
+            /* transform: skewX(145deg); */
+            /* transform: skewY(145deg); */
+
+            transform: rotate(5000deg);
+
+            transition-property: transform,background-color,color;
+            transition-duration: 5s;
+            transition-timing-function: linear;
+            transition-delay: 2s;
+
+            background-color: rgb(5, 193, 245);
+            color: black;
+            /* transition: background-color 2s linear 0.5s; */
+
+            /* transform: translateX(500px);
+            transition-property: transform;
+            transition-duration: 2s;
+            transition-timing-function:linear;
+            transition-delay: 1s; */
+
+
+        }
+    </style>
+</head>
+<body>
+    <div id="main">BOX</div>
+</body>
+</html>
