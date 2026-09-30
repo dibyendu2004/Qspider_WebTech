@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            height:100px;
+            width: 100px;
+            background-color: rgb(21, 255, 0);
+
+            animation-name: example;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-delay: 0.5s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+            animation-direction: alternate;
+            animation-play-state: running;
+        }
+
+        #main:hover{
+            animation-play-state: paused;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+
+        @keyframes example {
+            from{
+                transform: translateY(0px) rotate(0deg);
+            }
+            to{
+                transform: translateY(-200px) rotate(120deg);
+                border-radius: 50%;
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+</body>
+</html>
