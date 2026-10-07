@@ -1,0 +1,61 @@
+$(document).ready(function () {
+    var countryApi = $("#countryCode").attr("country-api");
+    if (countryApi) {
+        $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
+            delete options.headers["authorization"];
+        });
+        $.ajax({
+            url: `${countryApi}/countries.json`,
+            type: "GET",
+            success: function (res) {
+                var filteredCountryCode = [];
+
+                for (var i = 0; i < res.length; i++) {
+                    let newData = res[i].phone_code;
+                    if (newData) {
+                        newData = newData.replace("+", "");
+                        if (filteredCountryCode.indexOf(newData) !== -1) {
+                        } else {
+                            filteredCountryCode.push(newData);
+                        }
+                    }
+                }
+                for (var k = 0; k < filteredCountryCode.length; k++) {
+                    filteredCountryCode.sort(function (a, b) {
+                        return a - b;
+                    });
+                    $("#countryCode").append(
+                        "<option value=" +
+                            filteredCountryCode[k] +
+                            ">" +
+                            filteredCountryCode[k] +
+                            "</option>"
+                    );
+                }
+                let defaultCountryCode =
+                    $("#countryCode").attr("data-default-code");
+                if ($(".myUrlLoginUnique").length)
+                    $.ajax({
+                        url: $(".myUrlLoginUnique").attr("data-url"),
+                        type: "GET",
+                        success: function (res) {
+                            $("#countryCode")
+                                .val(res.data.contactDetails.mobile.callingCode)
+                                .change();
+                            if (defaultCountryCode) {
+                                $("#countryCode")
+                                    .val(defaultCountryCode)
+                                    .change();
+                            }
+                        },
+                        error: function (e) {},
+                    });
+
+                if (defaultCountryCode) {
+                    $("#countryCode").val(defaultCountryCode).change();
+                }
+            },
+            error: function (err) {},
+        });
+    }
+});

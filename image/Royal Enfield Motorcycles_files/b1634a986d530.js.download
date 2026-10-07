@@ -1,0 +1,102 @@
+//15.261.0-es2019 (b1634a986d530)
+var CS_CONF={"collectionEnabled":true,"useSentry":false,"projectId":75136,"status":1,"hostnames":["royalenfield.com"],"crossDomainTracking":0,"crossDomainSingleIframeTracking":0,"consentRequired":1,"allowSubdomains":1,"visitorCookieTimeout":34164000000,"sampleRate":100,"replayRecordingRate":100,"validationRate":10,"lastTrackingDraw":null,"trackerDomain":"c.az.contentsquare.net","recordingDomain":"r.contentsquare.net","useMalkaPipeline":1,"ed":"l.contentsquare.net/log/web","eMerchandisingEnabled":0,"mouseMoveHeatmapEnabled":1,"jsErrorsEnabled":1,"customErrorsEnabled":1,"jsCustomErrorsEnabled":0,"apiErrorsEnabled":1,"customHashIdEnabled":0,"recordingEncryptionEnabled":0,"recordingEncryptionPublicKey":null,"recordingEncryptionPublicKeyId":0,"secureCookiesEnabled":0,"triggerSessionReplayEnabled":0,"triggerSessionReplayRegex":null,"dynamicIdRegex":null,"whitelistedAttributes":null,"replayRecordingUnmaskedUrlRegex":null,"replayRecordingUnmaskedUrlRegexRules":[],"replayRecordingMaskedUrlRegexRules":[],"replayRecordingMaskedUrlRegex":null,"anonymisationMethod":"replayRecordingUnmaskedUrlRegexRules","tagDeploymentMode":"CONTENTSQUARE","experimental":null,"iframesTracking":0,"textVisibilityEnabled":0,"cookielessTrackingEnabled":0,"malkaUrlEnabled":0,"malkaEtrEnabled":0,"pathComputationRules":{},"asyncSerializerEnabled":1,"pendingInactivityTimeout":5000,"accessibilityEnabled":0,"uxaDomain":"app.contentsquare.com","webviewsTrackingEnabled":0,"useStaticResourceManager":1,"performanceTimingOptions":{"withNavigation":false,"withResource":false},"replayConsentRequiredForSession":0,"eventsApiEnabled":0,"clickedElementTextEnabled":0,"collectHierarchy":0,"collectSubmit":0,"collectTargetText":0,"apiErrors":{"collectStandardHeaders":0,"collectionRules":[{"bodyAttributePaths":[{"path":"errors[0].message","encrypted":0,"primary":0,"type":"response"}],"collectQueryParam":0,"collectRequestBody":0,"collectResponseBody":0,"customHeaders":[],"url":"graphql","statusCode":200,"bodyContent":"errors\":"},{"bodyAttributePaths":[],"collectQueryParam":0,"collectRequestBody":0,"collectResponseBody":0,"customHeaders":[{"headerName":"cf-cache-status","encrypted":0,"type":"request"},{"headerName":"cf-ray","encrypted":0,"type":"request"},{"headerName":"x-cache-enabled","encrypted":0,"type":"request"},{"headerName":"x-cache","encrypted":0,"type":"request"},{"headerName":"x-amz-cf-id","encrypted":0,"type":"request"},{"headerName":"x-ray","encrypted":0,"type":"request"},{"headerName":"upgrade","encrypted":0,"type":"request"},{"headerName":"X-Request-Id","encrypted":0,"type":"request"},{"headerName":"x-wix-request-id","encrypted":0,"type":"request"},{"headerName":"X-Pass-Why","encrypted":0,"type":"request"},{"headerName":"x-nginx-cache-status","encrypted":0,"type":"request"},{"headerName":"trace-id","encrypted":0,"type":"request"},{"headerName":"traceparent","encrypted":0,"type":"request"},{"headerName":"X-NewRelic-Transaction","encrypted":0,"type":"request"},{"headerName":"X-Datadog-Trace-ID","encrypted":0,"type":"request"}]}]},"customErrors":{"consoleMessageLogLevels":[]},"displayAdOptions":null,"taskSchedulerOptions":{"enabled":1},"malkaQuotaServiceDomain":"q-us1.az.contentsquare.net","malkaRecordingDomain":"k-us1.az.contentsquare.net","staticResourceManagerDomain":"srm.af.contentsquare.net","voc":{"siteId":null,"enabled":0},"anonymizeDigits":null,"dynamicConfDomain":"t.contentsquare.net/settings","tagVerificationDomain":"tcvsapi.contentsquare.com","startMode":1,"isLegacyHJ":false,"maskMedia":false,"tagVerificationEnabled":true,"trackingCodeVerified":true,"experiments":{"list":[]},"useBootstrapFile":true,"urlBlacklist":null};
+function injectTag(stable, candidate, share) {
+  if (typeof CS_CONF === "undefined") {
+    return;
+  }
+  const d2 = document;
+  const logUrl = `https://${CS_CONF.ed}`;
+  const pid = CS_CONF.projectId;
+  function log2(message2, level = "critical") {
+    const page = location.origin + location.pathname;
+    const msg = `${logUrl}?a=uxa&l=${level}&m=${encodeURIComponent(message2)}&pid=${pid}&p=${encodeURIComponent(page)}`;
+    fetch(msg, { mode: "cors", credentials: "omit", keepalive: true }).catch(
+      () => {
+        const image = new Image();
+        image.crossOrigin = "anonymous";
+        image.src = msg;
+      }
+    );
+  }
+  const currentScript = document.currentScript;
+  const hjDomains = ["static-integration.hotjar.com", "static.hotjar.com"];
+  const isHotjar = hjDomains.some((x2) => currentScript?.src.includes(x2));
+  const origin = isHotjar ? new URL(currentScript.src).origin : "https://t.contentsquare.net";
+  const rollout = candidate && share ? { arm: Math.random() < share ? "candidate" : "stable" } : null;
+  CS_CONF.rollout = rollout;
+  const path2 = rollout?.arm === "candidate" && candidate ? candidate : stable;
+  const expectedSrc = new URL(`${origin}/${path2}`).href;
+  const element = d2.createElement("script");
+  let stopped = false;
+  let errorTimer;
+  const observer = new MutationObserver((records) => checkAttributes(records));
+  function cleanup() {
+    stopped = true;
+    clearTimeout(errorTimer);
+    observer.disconnect();
+    d2.removeEventListener("securitypolicyviolation", onCsp);
+    element.onload = null;
+    element.onerror = null;
+  }
+  function report(cause) {
+    log2(`Bootstrap error: ${cause}`);
+  }
+  function checkAttributes(records = observer.takeRecords()) {
+    if (stopped) return true;
+    for (const attribute of ["src", "type"]) {
+      const expected = attribute === "src" ? expectedSrc : null;
+      const observed = element.getAttribute(attribute);
+      if (attribute === "src" && element.src !== expectedSrc || observed !== expected || records.some(
+        (record) => record.attributeName === attribute && record.oldValue !== expected
+      )) {
+        cleanup();
+        report(`${attribute} changed observed=${JSON.stringify(observed)}`);
+        return true;
+      }
+    }
+    return false;
+  }
+  function onCsp(event) {
+    if (stopped || !event.isTrusted || event.disposition !== "enforce" || !["script-src", "script-src-elem"].includes(event.effectiveDirective) || event.blockedURI !== expectedSrc && !(event.target === element && event.blockedURI === origin)) {
+      return;
+    }
+    if (checkAttributes()) return;
+    cleanup();
+    report(
+      `csp blocked directive=${event.effectiveDirective} blockedURI=${event.blockedURI}`
+    );
+  }
+  d2.addEventListener("securitypolicyviolation", onCsp);
+  element.onload = () => {
+    if (!checkAttributes()) cleanup();
+  };
+  element.onerror = () => {
+    if (checkAttributes() || errorTimer !== void 0) return;
+    errorTimer = setTimeout(() => {
+      if (checkAttributes()) return;
+      cleanup();
+      report("others");
+    }, 0);
+  };
+  try {
+    element.src = expectedSrc;
+    element.async = true;
+    element.fetchPriority = "high";
+    element.crossOrigin = "anonymous";
+    if (!checkAttributes()) {
+      observer.observe(element, {
+        attributes: true,
+        attributeFilter: ["src", "type"],
+        attributeOldValue: true
+      });
+    }
+    (d2.head || d2.documentElement).appendChild(element);
+    checkAttributes();
+  } catch (error2) {
+    cleanup();
+    throw error2;
+  }
+}
+injectTag("releases/15.261.0/es2019/1f00004-fe5373d7.js");
+
+// signature-15f07725edde038a64fee82fd35dbd23a967c7fdd7433a592d455163eb4bc5f8

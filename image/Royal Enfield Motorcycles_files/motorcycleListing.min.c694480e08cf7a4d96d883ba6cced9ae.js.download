@@ -1,0 +1,69 @@
+$(function () {
+    $(document).on("click", ".mymotorcycles", function () {
+        let $this = $(this);
+        
+        if ($this.data("clicked")) return; // Prevent multiple triggers within timeout
+        $this.data("clicked", true);
+    
+        let motorcyclePlaceholderSelectAna = $this
+            .parent(".select_bikes_drop_wrap")
+            .parent(".select-bikes-drop-container")
+            .parent(".selectMotorcycle")
+            .siblings(".form-container-model")
+            .children(".form-rows-model")
+            .children("div")
+            .children(".td_bikes_dd")
+            .attr("data-placeHolder");
+    
+        let motorcycleAna = $this.attr("data-bike");
+    
+        dataLayer.push({
+            'event': 'motorcycleListing',
+            'eventCategory': 'motorcycleListing',
+            'eventAction': motorcyclePlaceholderSelectAna,
+            'eventLabel': motorcycleAna,
+            'motorcycle': motorcycleAna
+        });
+    
+        // Allow clicking again after 1 second
+        setTimeout(() => {
+            $this.data("clicked", false);
+        }, 100);
+    });
+});
+$(document).ready(function(){
+    // bike dropdown start
+    $(".select_bikes_drop_wrap label").click(function () {
+        $(".select_bikes_drop_wrap label").removeClass("active");
+        $(this).addClass("active");
+        $(".bikes_test_ride_select").html($(this).data("bike"));
+        $(".bikes_test_ride_select").attr("value",$(this).data("bike"));
+        //console.log("@@@@@@@@@@@@@@@@@@@@@@"+$(this).children(".motorcycle-select").attr("mailerimage"));
+        $(".bikes_test_ride_select").attr("mailerImage",$(this).children(".motorcycle-select").attr("mailerimage"));
+        $(".bikes_test_ride_select").attr("modelCode",$(this).children(".motorcycle-select").attr("modelCode"));
+        $(".bikes_test_ride_select").attr("bikeModelName",$(this).children(".motorcycle-select").attr("modelName"));
+        $(".select_bikes_drop").slideUp();
+        $(".bikes_test_ride_select").removeClass("selected");
+    });
+    $(".bikes_test_ride_select, .bk_push_up").click(function () {
+        $(".select_bikes_drop").slideToggle();
+    });
+    $(".bk_push_up").click(function () {
+        $(".bikes_test_ride_select").removeClass("selected");
+    });
+    $(".bikes_test_ride_select").click(function () {
+        $(this).toggleClass("selected");
+    });
+    //bike section scroll up only for mobile
+    if ($(window).width() < 767) {
+        $(".td_bike_dd").on("click", function () {
+            $("html, body").animate(
+                {
+                    scrollTop: $(".select_bikes_drop").offset().top - 0
+                },
+                500
+            );
+        });
+    }
+    // bike dropdown end
+});

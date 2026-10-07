@@ -1,0 +1,15 @@
+$(function () {
+    $(document).on('click', '.footerAnaFlashSale', function () {
+        let ctaText = $(this).text().trim();
+        let nextPageUrl = $(this).attr("href");
+        if (nextPageUrl == undefined) {
+            nextPageUrl = ""
+        }
+        dataLayer.push({
+            'event': 'footer',
+            'eventCategory': 'footer',
+            'eventAction': ctaText,
+            'eventLabel': nextPageUrl
+        })
+    });
+});

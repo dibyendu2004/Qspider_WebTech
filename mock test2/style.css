@@ -1,0 +1,140 @@
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            background-image: url('https://bmw.scene7.com/is/image/BMW/G70_banner:16to7?fmt=webp-alpha&wid=1919&fit=constrain%2C1');
+            width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container .navbar{
+            background-color: rgba(29, 15, 15, 0.5);
+            display: flex;
+            width: 97%;
+            height: 80px;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            padding: 0px 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            border-radius: 15px;
+        }
+        .container .navbar #logo img{
+            width: 100px;
+            height: 60px;
+        }
+        .container .navbar #services #list{
+            display: flex;
+            width: 400px;
+            justify-content: space-evenly;
+        }
+        .container .navbar #services #list .items{
+            list-style: none;
+        }
+        .container .navbar #contact .button{
+            background-color: transparent;
+            width: 120px;
+            height: 40px;
+            border: 2px solid rgb(74, 74, 74);
+            text-align:center;
+            line-height: 40px;
+            border-radius: 30px;
+        }
+
+
+        .middle{
+            width: 97%;
+            margin: auto;
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        .middle #heading{
+            margin: 10px 0px;
+            font-size: 70px;
+        }
+        .middle #explore{
+            background-color: white;
+            color: black;
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 40px;
+            margin: 20px 0px;
+
+        }
+
+        .about{
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+        .about .section{
+            width: 40%;
+            height: 60%;
+        }
+        .about .section .btn{
+            background-color: white;
+            color: black;
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 40px;
+            margin: 20px 0px;
+        }
+
+  
+
+        .about{
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+
+
+        .cars{
+            width: 100%;
+            height: 70vh;
+            
+        }
+
+        .cars #car_header{
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+            margin: auto;
+            height: 100px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .cars #display{
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+            margin: auto;
+            height: 100px;
+            flex-wrap: wrap;
+        }
+        .cars #display .car img{
+            width: 400px;
+            height:400px;
+        }

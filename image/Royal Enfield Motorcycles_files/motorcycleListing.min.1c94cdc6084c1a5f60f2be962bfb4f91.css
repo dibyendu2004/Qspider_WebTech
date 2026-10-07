@@ -1,0 +1,44 @@
+.input-box{position:relative}
+.input-box{width:calc(100% - 20px);width:-moz-calc(100% - 20px);width:-webkit-calc(100% - 20px);display:inline-block;margin:10px 10px;vertical-align:top}
+.bike-pricing{display:block;line-height:10px;padding-bottom:10px}
+.td_bikes_dd{font-size:14px;padding:0;color:#212121;font-family:"montserrat-regular";border:solid 1px #656565;height:50px;line-height:46px;padding:0 20px;cursor:pointer;position:relative;text-transform:capitalize;white-space:pre;overflow:hidden}
+.td_bikes_dd.selected:before{transform:rotateX(180deg)}
+.td_bikes_dd:before{position:absolute;padding-right:15px;right:0;top:50%;content:'\0043';color:#212121;font-size:14px;font-family:'reicons';height:20px;margin-top:-10px;line-height:20px}
+.select_bike_half_width_right{width:200%;position:relative;display:none;right:100%;padding:0 10px}
+.select_bike_half_width_left{width:200%;position:relative;display:none;right:0;padding:0 10px}
+.select_bike_full_width{width:100%;position:relative;display:none;right:0;padding:0 10px}
+.select-bikes-drop-container{background:#212121}
+.select_bikes_drop .select_bikes_drop_wrap{overflow:hidden;margin:0 5% 20px;padding-bottom:30px;display:flex;justify-content:center;flex-wrap:wrap}
+.select_bikes_drop .select_bikes_drop_wrap label{width:25%;float:left;display:block;cursor:pointer;box-sizing:border-box;padding:0 2%;overflow:hidden;position:relative;z-index:9}
+.select_bikes_drop .select_bikes_drop_wrap label input[type="radio"]{position:absolute;left:0;top:0;opacity:0;visibility:hidden}
+.select_bikes_drop .select_bikes_drop_wrap label img{width:100%;display:block}
+.select_bikes_drop .select_bikes_drop_wrap label p{font-size:9px;display:block;text-align:center;line-height:18px;color:#d5d5d5;position:relative;transition:all .5s ease 0;margin:0}
+.select_bikes_drop .select_bikes_drop_wrap label p:after{width:0;height:1px;background:#da291c;position:absolute;bottom:0;left:50%;content:'';transition:all .5s ease 0}
+.select_bikes_drop .select_bikes_drop_wrap label p:before{width:0;height:1px;background:#da291c;position:absolute;top:0;left:50%;content:'';transition:all .5s ease 0}
+.select_bikes_drop .select_bikes_drop_wrap label:hover p,.select_bikes_drop .select_bikes_drop_wrap label.active p{color:#da291c}
+.select_bikes_drop .select_bikes_drop_wrap label:hover p:after,.select_bikes_drop .select_bikes_drop_wrap label.active p:after{width:100%;left:0}
+.select_bikes_drop .select_bikes_drop_wrap label:hover p:before,.select_bikes_drop .select_bikes_drop_wrap label.active p:before{width:100%;left:0}
+.select_bikes_drop .bk_push_up{width:40px;height:40px;position:absolute;left:50%;margin-left:-20px;bottom:-20px;background:#d5d5d5;box-shadow:0 3px 4px 0 #a5a5a5;text-align:center;cursor:pointer}
+.select_bikes_drop .bk_push_up:hover:after{color:#da291c}
+.select_bikes_drop .bk_push_up:after{text-align:center;font-size:14px;color:#212121;line-height:40px;content:'\0043';font-family:'reicons';transform:rotate(180deg);display:block}
+.select_bikes_drop .bike_holder{width:20%;float:left;margin:0 2.5%;cursor:pointer}
+.select_bikes_drop .bike_holder img{display:block;width:100%}
+.select_bikes_drop .bike_holder p{font-size:18px;display:block;text-align:center;color:#d5d5d5;line-height:55px;position:relative}
+.select_bikes_drop .bike_holder p:before{width:50%;height:1px;position:absolute;left:50%;background:#da291c;top:0;content:''}
+.select_bikes_drop .bike_holder p:after{width:50%;height:1px;position:absolute;left:50%;background:#da291c;bottom:0;content:''}
+.multi-field-file-wrapper .file-upload{margin:0 5px}
+@media screen and (max-width:1250px){.select_bikes_drop .select_bikes_drop_wrap label{width:33.33%}
+.select_bikes_drop .select_bikes_drop_wrap label p{font-size:10px;line-height:30px}
+}
+@media screen and (max-width:767px){.form-container-model{max-width:800px;margin:0 auto;padding:0}
+.form-rows-model{margin:10px}
+.input-box.column-2{width:100% !important;margin:5px 0}
+.td_bikes_dd{border-width:1px}
+.select_bikes_drop{width:100%;margin:0;right:0}
+.select_bikes_drop .select_bikes_drop_wrap label{width:50% !important;padding:0 6%}
+.td_bike_dd{border-width:1px}
+.select_bikes_drop .select_bikes_drop_wrap{margin:0 0 20px}
+.multi-field-file-wrapper .file-upload{margin:0 10px}
+.select_bikes_drop .select_bikes_drop_wrap label p{line-height:17px;padding-top:14px}
+}
+.arial-ft .td_bikes_dd{font-family:"Arial-regular"}
