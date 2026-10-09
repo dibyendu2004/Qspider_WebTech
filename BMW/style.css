@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#section-1{
+    background-image: linear-gradient(to right,black 5%, rgba(255, 255, 255, 0) 90%), url("../image/bmw.webp");
+    height: 87vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+
+}
+
+#section-1 nav{
+    width: 85%;
+    height: 75px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;   
+}
+
+#section-1 nav article{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    height: inherit;
+    align-items: center;
+}
+
+#section-1 nav #logo{
+    width: 20%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+#section-1 nav #list{
+    width: 90%;
+    height: inherit;
+
+}
+
+#section-1 nav #icon{
+    width: 20%;
+    height:inherit
+}
+
+#section-1 nav #list ul{
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    list-style: none;
+    align-items: center;
+    font-size:20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: lighter;
+    color: white;
+}
+
+#section-1 nav #icon ul{
+    display:flex;
+    justify-content: space-around;
+    height: inherit;
+    align-items: center;
+}
+
+#section-1 nav #icon ul li{
+    list-style: none;
+    color: white;
+    font-size: 20px;
+}
+
+hr{
+    width: 85%;
+    margin: auto;
+    position: relative;
+    top: 10px;
+}
+
+
+#section-1 #action{
+    width: 85%;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    color: white;
+}
+
+#section-1 #action #para-1{
+    font-size: 25px;
+    font-weight: lighter;
+    letter-spacing: 15px;
+}
+
+#section-1 #action #head{
+    font-size: 200px;
+    font-weight: lighter;
+}
+
+#section-1 #action #para-2{
+    font-size:20px;
+    margin-bottom: 10px;
+}
+
+#section-1 #action #para-3{
+    font-size:20px;
+    margin-bottom: 20px;
+}
+
+#section-1 #action button{
+    padding: 10px 50px;
+    font-size:15px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    
+}
+
+#section-1 #action button:hover{
+    box-shadow: 0px 0px 0px 1px white;
+}
+
+#section-2{
+    height: 350px;
+    /* display: flex; */
+    /* justify-content: column-reverse; */
+    gap: 50px;
+      
+}
+
+#section-2 #section2-head{
+    font-size: 40px;
+    height: 100px;
+}
+#section-2 #section2-head p{
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+#section-2 #section2-tail{
+    display: flex;
+    justify-content: space-around;
+    height: 200px;
+    width: 85%;
+    margin: auto;
+    
+}
+
+#section-2 #section2-tail .section2-card{
+    /* height: 250px; */
+    /* border: 1px solid black; */
+    /* padding-top:5px ; */
+    text-align: center;
+    
+}
+
+#section-2 #section2-tail .section2-card img{
+    height: 80px;
+    width: 80px;
+    margin-bottom: 20px;
+    
+}
+
+#section-2 #section2-tail .section2-card p{
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+#section-2 #section2-tail .section2-card button{
+     padding: 15px 20px;
+    font-size:15px;
+    font-weight: 80px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 3px;
+    margin-bottom: 40px; 
+}
+
+#section-2 #section2-tail .section2-card button:hover{
+    box-shadow: 0px 0px 0px 1px black;
+}
