@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 #section-1{
     background-image: linear-gradient(to right,black 5%, rgba(255, 255, 255, 0) 90%), url("../image/bmw.webp");
@@ -54,7 +57,7 @@
     list-style: none;
     align-items: center;
     font-size:20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-weight: lighter;
     color: white;
 }
@@ -89,13 +92,15 @@ hr{
 }
 
 #section-1 #action #para-1{
-    font-size: 25px;
+    font-size: 19px;
     font-weight: lighter;
-    letter-spacing: 15px;
+    letter-spacing: 10px;
+    margin-top: 40px;
 }
 
 #section-1 #action #head{
-    font-size: 200px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 210px;
     font-weight: lighter;
 }
 
@@ -110,7 +115,7 @@ hr{
 }
 
 #section-1 #action button{
-    padding: 10px 50px;
+    padding: 17px 60px;
     font-size:15px;
     background-color: transparent;
     color: white;
@@ -131,10 +136,11 @@ hr{
 }
 
 #section-2 #section2-head{
-    font-size: 40px;
     height: 100px;
 }
 #section-2 #section2-head p{
+    font-size: 40px;
+    /* font-weight: lighter ; */
     text-align: center;
     margin-top: 40px;
 }
@@ -181,4 +187,153 @@ hr{
 
 #section-2 #section2-tail .section2-card button:hover{
     box-shadow: 0px 0px 0px 1px black;
+}
+
+#section-3{
+    background-image: linear-gradient(to right,black 5%, rgba(255, 255, 255, 0) 90%),url("../image/bmwi5.webp");
+    height: 60vh;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#section-3 article div{
+    width: 85%;
+    margin: auto;
+    position: relative;
+    top: 150px;
+    color: white;
+}
+
+#section-3 article div h1{
+margin-bottom: 25px;
+font-weight: lighter;
+font-size: 35px;
+}
+
+#section-3 article div #p1{
+    font-size:20px;
+    margin-bottom: 5px;
+}
+
+#section-3 article div #p2{
+    font-size:20px;
+    margin-bottom: 25px;
+}
+
+#section-3 article div button{
+    padding: 15px 120px;
+    color: white;
+    font-size:15px;
+    font-weight: 80px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-bottom: 40px;
+}
+
+#section-3 article div button:hover{
+    box-shadow: 0px 0px 0px 1px white;
+}
+
+
+
+
+
+
+#section-4{
+    margin-top: 40px;
+    background-image: linear-gradient(to right,black 5%, rgba(255, 255, 255, 0) 90%),url("../image/bmwX1.webp");
+    height: 60vh;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#section-4 article div{
+    width: 85%;
+    margin: auto;
+    position: relative;
+    top: 150px;
+    color: white;
+}
+
+#section-4 article div h1{
+margin-bottom: 25px;
+font-weight: lighter;
+font-size: 35px;
+}
+
+#section-4 article div #p1{
+    font-size:20px;
+    margin-bottom: 5px;
+}
+
+#section-4 article div #p2{
+    font-size:20px;
+    margin-bottom: 25px;
+}
+
+#section-4 article div button{
+    padding: 15px 120px;
+    color: white;
+    font-size:15px;
+    font-weight: 80px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-bottom: 40px;
+}
+
+#section-4 article div button:hover{
+    box-shadow: 0px 0px 0px 1px white;
+}
+
+
+#section-5{
+    margin-top: 40px;
+    background-image: linear-gradient(to right,black 5%, rgba(255, 255, 255, 0) 90%),url("../image/bmwM60i.webp");
+    height: 60vh;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#section-5 article div{
+    width: 85%;
+    margin: auto;
+    position: relative;
+    top: 150px;
+    color: white;
+}
+
+#section-5 article div h1{
+margin-bottom: 25px;
+font-weight: lighter;
+font-size: 35px;
+}
+
+#section-5 article div #p1{
+    font-size:20px;
+    margin-bottom: 5px;
+}
+
+#section-5 article div #p2{
+    font-size:20px;
+    margin-bottom: 25px;
+}
+
+#section-5 article div button{
+    padding: 15px 120px;
+    color: white;
+    font-size:15px;
+    font-weight: 80px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-bottom: 40px;
+}
+
+#section-5 article div button:hover{
+    box-shadow: 0px 0px 0px 1px white;
 }
