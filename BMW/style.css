@@ -337,3 +337,210 @@ font-size: 35px;
 #section-5 article div button:hover{
     box-shadow: 0px 0px 0px 1px white;
 }
+
+
+#section-6{
+    margin-top: 40px;
+    height: 70vh;
+    width: 100%;
+}
+
+#section-6 article{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#section-6 article #a{
+    width: 60%;
+}
+
+#section-6 article #b{
+    width: 40%;
+}
+
+#section-6 article #b main{
+    margin-top:150px ;
+}
+#section-6 article #b main h1{
+ font-weight: lighter;
+}
+
+#section-6 article #b main #p1{
+   margin-top:25px; 
+   text-wrap: wrap;
+   font-size: 20px;
+   font-weight: lighter;
+}
+#section-6 article #b main #p2{
+   margin-top:25px; 
+   font-weight: lighter;
+}
+
+
+
+
+
+
+/* Section 7 */
+#section-7 {
+    width: 100%;
+    background-color: #f7f7f7;
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+#section-7 * {
+    box-sizing: border-box;
+}
+
+/* Newsletter */
+#section-7 .newsletter {
+    min-height: 115px;
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 25px 7.5%;
+}
+
+#section-7 .newsletter-logo img {
+    width: 65px;
+    height: auto;
+    display: block;
+}
+
+#section-7 .newsletter p {
+    font-size: 18px;
+    margin: 0;
+}
+
+#section-7 .signup {
+    color: #111;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#section-7 .signup span {
+    font-size: 28px;
+    margin-left: 5px;
+    vertical-align: -2px;
+}
+
+/* Footer Layout */
+#section-7 .footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 30px 6.3% 45px;
+}
+
+#section-7 .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+#section-7 .footer-group h2 {
+    font-size: 27px;
+    font-weight: normal;
+    margin: 0 0 38px;
+}
+
+#section-7 .footer-group a {
+    display: block;
+    width: fit-content;
+    color: #222;
+    font-size: 17px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: color 0.2s;
+}
+
+#section-7 .footer-group a:hover {
+    color: #0866c6;
+    text-decoration: underline;
+}
+
+
+#section-7 .electric-group {
+    margin-top: 0;
+}
+
+
+
+
+
+#section-7 .social-section {
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 9%;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+#section-7 .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+#section-7 .social-icons a {
+    color: #555;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#section-7 .social-icons a:hover {
+    color: #0866c6;
+}
+
+
+#section-7 .social-icons .instagram {
+    font-size: 31px;
+}
+
+#section-7 .social-icons .youtube {
+    font-size: 19px;
+    background-color: transparent;
+}
+
+
+#section-7 .social-icons .linkedin {
+    font-size: 24px;
+}
+
+
+#section-7 .bottom-footer {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 5.3%;
+    background-color: #f7f7f7;
+}
+
+#section-7 .bottom-footer p {
+    font-size: 18px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#section-7 .bottom-footer a {
+    font-size: 18px;
+    color: #222;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+#section-7 .bottom-footer a:hover {
+    text-decoration: underline;
+}
